@@ -1,0 +1,30 @@
+'''
+Topic : using the zip concept in python
+Explaination :
+Student ID → ___1_____2_____3_____4_____5__               
+Subject 1   |  89    90    78    93    80
+Subject 2   |  90    91    85    88    86  
+Subject 3   |  91    92    83    89    90.5
+            |______________________________
+Average        90    91    82    90    85.5 
+
+In this i Need to find the avarage of each student in all subjects 
+What is Zipped?
+Example--> a1=['a','b','c']
+           b1=[1,2,3]
+           zipped=list(zip(a1,b1))====> output of zipped is->[('a',1),('b',2),('c',3)] 
+
+---------------Code---------------
+
+num_students, num_subjects= map(int, input().split())
+
+list1=[]
+for i in range(num_subjects):
+    list2=list(map(float, input().split()))
+    list1.append(list2)
+    zipped = list(zip(*list1))
+    #print(zipped)
+
+for i in range(num_students):
+    avg = sum(list(zipped[i])) / num_subjects
+    print(avg)
