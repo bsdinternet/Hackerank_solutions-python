@@ -1,0 +1,26 @@
+''' Topic :collections.Counter()
+    Explaination: 
+    1) At first we are getting 3 input values X, Sizes, collections-counter
+    X-> Number of Shoes are avaliable
+    sizes-> it is a list for diffrent sizes shoes where quantity=X
+    N->Number of customers 
+    2)Here customers buy shoes  with quantity and price.
+
+    Problem find the total money shop owner earned'''
+
+note: collections.Counter is used for to track unique integer appeers
+----------Code----------
+  
+import collections
+
+X=int(input())
+sizes=collections.Counter(map(int,input().split()))
+N=int(input())
+money=0
+
+for i in range(N): 
+  size,price= map(int,input().split())
+  if sizes[size]>0:
+      sizes[size]-=1
+      money+=price
+print(money)
