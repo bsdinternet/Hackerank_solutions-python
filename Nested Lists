@@ -1,0 +1,35 @@
+Topic: Nested Lists
+
+Explaination: Creating a Lists with 2 sub sets of data 
+              Example: students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
+              here at first-> We get input of how many students 
+              here we need to find who is the lowest grade in the list 
+              If there are multiple students with the second lowest grade, order their names alphabetically and print each name on a new line.
+              
+---------------Code---------------
+if __name__ == '__main__':
+    dic={}
+    s=list()
+    no_students= int(input())
+
+    for _ in range(no_students):
+        name = input()
+        score = float(input())
+        
+        if score in dic:
+            dic[score].append(name)
+        else:
+            dic[score]=[name]
+        
+        if score not in s:
+            s.append(score)
+    
+    m=min(s)
+    s.remove(m)
+    m1=min(s)
+    dic[m1].sort()
+    for i in dic[m1]:
+        print(i)
+
+link of the problem
+https://www.hackerrank.com/challenges/nested-list/problem
