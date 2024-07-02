@@ -1,0 +1,25 @@
+Topic: Default Dict
+Definintion of Default Dict->-> it is similar to dictionary but the key is default will be sit if the key is not given
+Explaination:
+-> two inputs are used to create a group(containers) of A and B 
+-> where A values are n will be repeated in the container
+-> where B values are m will act has a key of Group a n values
+-> Our Job is to find the index's that n values match with m values 
+-> if not matched then it need to return -1
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import defaultdict
+d=defaultdict(list)
+n,m= map(int,input().split())
+
+for i in range(1,n+1):
+    v=input()
+    d[v].append(i)
+    
+for i in range(m):
+    k=input()
+    if k in d:
+        print(*d[k],sep=" ")
+    else:
+        print(-1)
+    
